@@ -147,7 +147,6 @@ if __name__ == "__main__":
     app.exec_()
 
     if current_algorithm != None and current_dataset != None:
-        print("jeff")
         gui = KNNGUI()
         gui.setupUi(Dialog)
         Dialog.show()

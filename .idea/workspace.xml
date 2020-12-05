@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="Change from QTDesigner to regular pyqt5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/KNN.py" afterDir="false" />
+    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="KNN &quot;Working&quot;">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607169092889</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="KNN &quot;Working&quot;">
+      <created>1607171244898</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607171244898</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,7 +138,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
     <MESSAGE value="Change from QTDesigner to regular pyqt5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change from QTDesigner to regular pyqt5" />
+    <MESSAGE value="KNN &quot;Working&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="KNN &quot;Working&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="179" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607167136645">
@@ -180,10 +186,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="949" height="215" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607169926957" />
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1605961231524">
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1607171250795">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1605961231524" />
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607171250795" />
     <state x="790" y="315" key="svn.repositoryBrowser" timestamp="1605960214965">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
