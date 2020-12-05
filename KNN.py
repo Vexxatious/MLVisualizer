@@ -5,8 +5,8 @@ from collections import Counter
 
 
 class KNN:
-    def __init__(self, dataset, k=3):
-        self.k = k
+    def __init__(self, dataset, parameters):
+        self.k = parameters[0]
         plt.style.use('fivethirtyeight')
         plt.title("Click to add new points")
         self.dataset = dataset
@@ -17,8 +17,6 @@ class KNN:
         plt.show()
 
     def k_nearest(self, dataset, predict, k):
-        if len(dataset) >= k:
-            print("K is less than the number of groups!")
         distances = []
         for group in dataset:
             for features in dataset[group]:
@@ -29,7 +27,6 @@ class KNN:
         for i in sorted(distances)[1:k + 1]:
             xs = [i[1][1][0], predict[0]]
             ys = [i[1][1][1], predict[1]]
-            print(xs, ys)
             plt.plot(xs, ys)
 
         vote_result = Counter(votes).most_common(1)[0][0]

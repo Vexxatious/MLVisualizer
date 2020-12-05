@@ -19,13 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/KNN.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/KNN.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tdsaf.py" afterDir="false" />
+    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="Change from QTDesigner to regular pyqt5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/KNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainWindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/mainWindow.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605977213927</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Change from QTDesigner to regular pyqt5">
+      <created>1607169092889</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607169092889</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,7 +132,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Change from QTDesigner to regular pyqt5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change from QTDesigner to regular pyqt5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="179" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607167136645">
@@ -143,38 +148,38 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="784" y="444" key="Github.CreateGistDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1605960537529" />
-    <state width="949" height="166" key="GridCell.Tab.0.bottom" timestamp="1607168646854">
+    <state width="949" height="166" key="GridCell.Tab.0.bottom" timestamp="1607171028782">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="166" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607168646854" />
-    <state width="949" height="166" key="GridCell.Tab.0.center" timestamp="1607168646853">
+    <state width="949" height="166" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607171028782" />
+    <state width="949" height="166" key="GridCell.Tab.0.center" timestamp="1607171028782">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="166" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607168646853" />
-    <state width="949" height="166" key="GridCell.Tab.0.left" timestamp="1607168646853">
+    <state width="949" height="166" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607171028782" />
+    <state width="949" height="166" key="GridCell.Tab.0.left" timestamp="1607171028782">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="166" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607168646853" />
-    <state width="949" height="166" key="GridCell.Tab.0.right" timestamp="1607168646854">
+    <state width="949" height="166" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607171028782" />
+    <state width="949" height="166" key="GridCell.Tab.0.right" timestamp="1607171028782">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="166" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607168646854" />
-    <state width="949" height="215" key="GridCell.Tab.1.bottom" timestamp="1607168535079">
+    <state width="949" height="166" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607171028782" />
+    <state width="949" height="215" key="GridCell.Tab.1.bottom" timestamp="1607169926957">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="215" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607168535079" />
-    <state width="949" height="215" key="GridCell.Tab.1.center" timestamp="1607168535079">
+    <state width="949" height="215" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607169926957" />
+    <state width="949" height="215" key="GridCell.Tab.1.center" timestamp="1607169926957">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="215" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607168535079" />
-    <state width="949" height="215" key="GridCell.Tab.1.left" timestamp="1607168535079">
+    <state width="949" height="215" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607169926957" />
+    <state width="949" height="215" key="GridCell.Tab.1.left" timestamp="1607169926957">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="215" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607168535079" />
-    <state width="949" height="215" key="GridCell.Tab.1.right" timestamp="1607168535079">
+    <state width="949" height="215" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607169926957" />
+    <state width="949" height="215" key="GridCell.Tab.1.right" timestamp="1607169926957">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="215" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607168535079" />
+    <state width="949" height="215" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607169926957" />
     <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1605961231524">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

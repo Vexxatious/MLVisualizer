@@ -1,11 +1,14 @@
 from KNN import KNN
 from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
+import ctypes
 
 Algorithms = {"K Nearest Neighbor": KNN}
 Datasets = {"K Nearest Neighbor": [{'k': [[1,3],[2,1],[1,4],[2,2]], 'r':[[6,5],[6,7],[8,6],[7,7]]}]}
 
 current_algorithm = None
 current_dataset = None
+parameters = []
 
 class KNNGUI(object):
     def setupUi(self, Dialog):
@@ -33,8 +36,18 @@ class KNNGUI(object):
         self.RunButton.setObjectName("RunButton")
         self.gridLayout.addWidget(self.RunButton, 0, 0, 1, 1)
 
+        self.RunButton.clicked.connect(self.runButtonCheck)
+
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def runButtonCheck(self):
+        global parameters
+        if self.KCounter.value() <= len(current_dataset):
+            ctypes.windll.user32.MessageBoxW(0, "K shouldn't be less than number of groups", "Warning", 0)
+            return
+        parameters.append(self.KCounter.value())
+        Dialog.accept()
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
@@ -120,16 +133,12 @@ class Ui_Dialog(object):
             if self.AlgorithmCombo.currentText() == "K Nearest Neighbor":
                 current_algorithm = "K Nearest Neighbor"
                 current_dataset = Datasets[self.AlgorithmCombo.currentText()][self.DatasetCombo.currentIndex()]
-                self.gui = KNNGUI()
-                self.gui.setupUi(Dialog)
-                self.gui.show()
-                self.hide()
+                Dialog.accept()
 
 
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
@@ -138,5 +147,10 @@ if __name__ == "__main__":
     app.exec_()
 
     if current_algorithm != None and current_dataset != None:
-        algorithm = Algorithms[current_algorithm](current_dataset)
+        print("jeff")
+        gui = KNNGUI()
+        gui.setupUi(Dialog)
+        Dialog.show()
+        app.exec_()
+        algorithm = Algorithms[current_algorithm](current_dataset,parameters)
 
