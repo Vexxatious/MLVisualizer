@@ -2,9 +2,14 @@ from KNN import KNN
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 import ctypes
+import tkinter as tk
+from tkinter import filedialog
+import random
 
 Algorithms = {"K Nearest Neighbor": KNN}
-Datasets = {"K Nearest Neighbor": [{'k': [[1,3],[2,1],[1,4],[2,2]], 'r':[[6,5],[6,7],[8,6],[7,7]]}]}
+Datasets = {"K Nearest Neighbor": [{'r': [[1,3],[2,1],[1,4],[2,2]], 'g':[[6,5],[6,7],[8,6],[7,7]]},
+                                   {'r': [[4,4],[3,4],[4,5],[3,5],[3.5,6],[3.5,4]], 'g':[[2,5],[2,4],[3.5,2],[4,2],[5,4],[5,5],[4,7],[3,3],[2.5,3],[2.5,6],[3,7],[4.5,3],[2.5,4],[5.6,6]]},
+                                   {'r': [[1,3],[2,1],[1,4],[2,2]], 'g':[[6,2],[6,3],[8,1],[7,3]], 'b':[[4,7],[6,8],[3,6],[7,8]]}]}
 
 current_algorithm = None
 current_dataset = None
@@ -100,6 +105,7 @@ class Ui_Dialog(object):
         self.ContinueButton.setObjectName("ContinueButton")
         self.gridLayout.addWidget(self.ContinueButton, 3, 0, 1, 1)
 
+        self.LoadDataset.clicked.connect(self.checkLoadDataset)
         self.newModel.stateChanged.connect(self.checkLoadButton)
         self.AlgorithmCombo.currentIndexChanged.connect(self.checkAlgorithmCombo)
         self.ContinueButton.clicked.connect(self.checkContinueButton)
@@ -122,10 +128,10 @@ class Ui_Dialog(object):
         self.LoadModel.setEnabled(not self.newModel.isChecked())
 
     def checkAlgorithmCombo(self):
-        if self.AlgorithmCombo.currentIndex() == 1:
+        if self.AlgorithmCombo.currentText() == "K Nearest Neighbor":
             self.newModel.setEnabled(False)
             self.LoadModel.setEnabled(False)
-            self.DatasetCombo.addItems(["Dataset 1","Dataset 2"])
+            self.DatasetCombo.addItems(["2 groups separate","2 groups surrounded","3 groups"])
 
     def checkContinueButton(self):
         global current_algorithm,current_dataset
@@ -135,8 +141,30 @@ class Ui_Dialog(object):
                 current_dataset = Datasets[self.AlgorithmCombo.currentText()][self.DatasetCombo.currentIndex()]
                 Dialog.accept()
 
+    def checkLoadDataset(self):
+        if self.AlgorithmCombo.currentText() == "K Nearest Neighbor":
+            root = tk.Tk()
+            root.withdraw()
+            file_path = filedialog.askopenfile()
+            dataset = convert_to_dataset_from_file_knn(file_path)
+            self.DatasetCombo.addItem("Custom Dataset")
+            self.DatasetCombo.setCurrentIndex(self.DatasetCombo.count()-1)
+            Datasets["K Nearest Neighbor"].append(dataset)
 
 
+def convert_to_dataset_from_file_knn(file):
+    arr = [line.split() for line in file]
+    string = "bgrcmyk"
+    new_arr = []
+    dict_ = {}
+    for i in range(len(arr)):
+        new_arr = []
+        for j in arr[i]:
+            new_arr.append([int(j[0]), int(j[2])])
+        color = random.choice(string)
+        string = string.replace(color, "")
+        dict_[color] = new_arr
+    return dict_
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
