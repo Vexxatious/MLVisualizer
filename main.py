@@ -1,4 +1,5 @@
 from KNN import KNN
+from LinearRegression import LinearRegression
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 import ctypes
@@ -6,13 +7,14 @@ import tkinter as tk
 from tkinter import filedialog
 import random
 
-Algorithms = {"K Nearest Neighbor": KNN}
+Algorithms = {"K Nearest Neighbor": KNN,"Linear Regression": LinearRegression}
 Datasets = {"K Nearest Neighbor": [{'r': [[1,3],[2,1],[1,4],[2,2]], 'g':[[6,5],[6,7],[8,6],[7,7]]},
                                    {'r': [[4,4],[3,4],[4,5],[3,5],[3.5,6],[3.5,4]], 'g':[[2,5],[2,4],[3.5,2],[4,2],[5,4],[5,5],[4,7],[3,3],[2.5,3],[2.5,6],[3,7],[4.5,3],[2.5,4],[5.6,6]]},
-                                   {'r': [[1,3],[2,1],[1,4],[2,2]], 'g':[[6,2],[6,3],[8,1],[7,3]], 'b':[[4,7],[6,8],[3,6],[7,8]]}]}
+                                   {'r': [[1,3],[2,1],[1,4],[2,2]], 'g':[[6,2],[6,3],[8,1],[7,3]], 'b':[[4,7],[6,8],[3,6],[7,8]]}],
+            "Linear Regression": [[[1,2],[2,3],[4,5],[6,7],[8,9]]]}
 
-current_algorithm = None
-current_dataset = None
+current_algorithm = ""
+current_dataset = []
 parameters = []
 
 class KNNGUI(object):
@@ -97,6 +99,9 @@ class Ui_Dialog(object):
         self.DatasetCombo = QtWidgets.QComboBox(self.gridLayoutWidget)
         self.DatasetCombo.setObjectName("DatasetCombo")
         self.horizontalLayout_2.addWidget(self.DatasetCombo)
+        self.newModel.setEnabled(False)
+        self.LoadModel.setEnabled(False)
+        self.DatasetCombo.addItems(["Test"])
         self.LoadDataset = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.LoadDataset.setObjectName("LoadDataset")
         self.horizontalLayout_2.addWidget(self.LoadDataset)
@@ -128,29 +133,46 @@ class Ui_Dialog(object):
         self.LoadModel.setEnabled(not self.newModel.isChecked())
 
     def checkAlgorithmCombo(self):
+        self.DatasetCombo.clear()
         if self.AlgorithmCombo.currentText() == "K Nearest Neighbor":
             self.newModel.setEnabled(False)
             self.LoadModel.setEnabled(False)
             self.DatasetCombo.addItems(["2 groups separate","2 groups surrounded","3 groups"])
+        if self.AlgorithmCombo.currentText() == "Linear Regression":
+            self.newModel.setEnabled(False)
+            self.LoadModel.setEnabled(False)
+            self.DatasetCombo.addItems(["Test"])
 
     def checkContinueButton(self):
         global current_algorithm,current_dataset
         if self.AlgorithmCombo.currentIndex() != -1 and self.DatasetCombo.currentIndex() != -1:
-            if self.AlgorithmCombo.currentText() == "K Nearest Neighbor":
-                current_algorithm = "K Nearest Neighbor"
+                current_algorithm = self.AlgorithmCombo.currentText()
                 current_dataset = Datasets[self.AlgorithmCombo.currentText()][self.DatasetCombo.currentIndex()]
                 Dialog.accept()
 
-    def checkLoadDataset(self):
-        if self.AlgorithmCombo.currentText() == "K Nearest Neighbor":
-            root = tk.Tk()
-            root.withdraw()
-            file_path = filedialog.askopenfile()
-            dataset = convert_to_dataset_from_file_knn(file_path)
-            self.DatasetCombo.addItem("Custom Dataset")
-            self.DatasetCombo.setCurrentIndex(self.DatasetCombo.count()-1)
-            Datasets["K Nearest Neighbor"].append(dataset)
 
+    def checkLoadDataset(self):
+        root = tk.Tk()
+        root.withdraw()
+        file_path = filedialog.askopenfile()
+        dataset = []
+        if self.AlgorithmCombo.currentText() == "K Nearest Neighbor":
+            dataset = convert_to_dataset_from_file_knn(file_path)
+        elif self.AlgorithmCombo.currentText() == "Linear Regression":
+            dataset = convert_to_dataset_from_file_linear_regression(file_path)
+        self.DatasetCombo.addItem("Custom Dataset")
+        self.DatasetCombo.setCurrentIndex(self.DatasetCombo.count()-1)
+        Datasets[self.AlgorithmCombo.currentText()].append(dataset)
+
+def convert_to_dataset_from_file_linear_regression(file):
+    arr = [line.split() for line in file]
+    dataset = []
+    for i in range(len(arr)):
+        new_arr = []
+        for j in arr[i]:
+            new_arr.append([float(j[0]),float(j[2])])
+        dataset.append(new_arr)
+    return dataset[0]
 
 def convert_to_dataset_from_file_knn(file):
     arr = [line.split() for line in file]
@@ -160,7 +182,7 @@ def convert_to_dataset_from_file_knn(file):
     for i in range(len(arr)):
         new_arr = []
         for j in arr[i]:
-            new_arr.append([int(j[0]), int(j[2])])
+            new_arr.append([float(j[0]), float(j[2])])
         color = random.choice(string)
         string = string.replace(color, "")
         dict_[color] = new_arr
@@ -175,9 +197,10 @@ if __name__ == "__main__":
     app.exec_()
 
     if current_algorithm != None and current_dataset != None:
-        gui = KNNGUI()
-        gui.setupUi(Dialog)
-        Dialog.show()
-        app.exec_()
+        if current_algorithm == "K Nearest Neighbor":
+            gui = KNNGUI()
+            gui.setupUi(Dialog)
+            Dialog.show()
+            app.exec_()
         algorithm = Algorithms[current_algorithm](current_dataset,parameters)
 
