@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,9 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="KNN Completed with custom dataset support">
-      <change afterPath="$PROJECT_DIR$/ExampleLinearRegressionDataset.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LinearRegression.py" afterDir="false" />
+    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="Finished Linear Regression">
+      <change afterPath="$PROJECT_DIR$/Test/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nn.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -53,9 +59,53 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.MLVisualizer">
+    <configuration name="MLVisualizer" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\samul\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -77,6 +127,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.MLVisualizer" />
+      <item itemvalue="Python.main" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -136,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607253997051</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finished Linear Regression">
+      <created>1607511398983</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607511398983</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,61 +218,74 @@
     <MESSAGE value="Change from QTDesigner to regular pyqt5" />
     <MESSAGE value="KNN &quot;Working&quot;" />
     <MESSAGE value="KNN Completed with custom dataset support" />
-    <option name="LAST_COMMIT_MESSAGE" value="KNN Completed with custom dataset support" />
+    <MESSAGE value="Finished Linear Regression" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Linear Regression" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="179" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607167136645">
+    <state x="752" y="383" key="#Scopes" timestamp="1608987545645">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="414" y="179" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607167136645" />
-    <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1607167135783">
+    <state x="752" y="383" key="#Scopes/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608987545645" />
+    <state x="414" y="179" width="1092" height="811" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608988207221">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607167135783" />
+    <state x="414" y="179" width="1092" height="811" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608988207221" />
+    <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1608987646442">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608987646442" />
     <state x="784" y="444" key="Github.CreateGistDialog" timestamp="1605960537529">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="784" y="444" key="Github.CreateGistDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1605960537529" />
-    <state width="1899" height="154" key="GridCell.Tab.0.bottom" timestamp="1607511199729">
+    <state width="1899" height="154" key="GridCell.Tab.0.bottom" timestamp="1608989727144">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="154" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607511199729" />
-    <state width="1899" height="154" key="GridCell.Tab.0.center" timestamp="1607511199729">
+    <state width="1899" height="154" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608989727144" />
+    <state width="1899" height="154" key="GridCell.Tab.0.center" timestamp="1608989727144">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="154" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607511199729" />
-    <state width="1899" height="154" key="GridCell.Tab.0.left" timestamp="1607511199729">
+    <state width="1899" height="154" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608989727144" />
+    <state width="1899" height="154" key="GridCell.Tab.0.left" timestamp="1608989727144">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="154" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607511199729" />
-    <state width="1899" height="154" key="GridCell.Tab.0.right" timestamp="1607511199729">
+    <state width="1899" height="154" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608989727144" />
+    <state width="1899" height="154" key="GridCell.Tab.0.right" timestamp="1608989727144">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="154" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607511199729" />
-    <state width="1899" height="215" key="GridCell.Tab.1.bottom" timestamp="1607194014665">
+    <state width="1899" height="154" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608989727144" />
+    <state width="1899" height="215" key="GridCell.Tab.1.bottom" timestamp="1608986105114">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="215" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607194014665" />
-    <state width="1899" height="215" key="GridCell.Tab.1.center" timestamp="1607194014665">
+    <state width="1899" height="215" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608986105114" />
+    <state width="1899" height="215" key="GridCell.Tab.1.center" timestamp="1608986105114">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="215" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607194014665" />
-    <state width="1899" height="215" key="GridCell.Tab.1.left" timestamp="1607194014665">
+    <state width="1899" height="215" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608986105114" />
+    <state width="1899" height="215" key="GridCell.Tab.1.left" timestamp="1608986105114">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="215" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607194014665" />
-    <state width="1899" height="215" key="GridCell.Tab.1.right" timestamp="1607194014665">
+    <state width="1899" height="215" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608986105114" />
+    <state width="1899" height="215" key="GridCell.Tab.1.right" timestamp="1608986105114">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="215" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607194014665" />
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1607254002740">
+    <state width="1899" height="215" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608986105114" />
+    <state x="461" y="169" key="SettingsEditor" timestamp="1608988141953">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607254002740" />
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608988141953" />
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1607511403962">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607511403962" />
     <state x="-1697" y="-15" width="1701" height="1038" maximized="true" key="dock-window-1" timestamp="1607509422350">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1697" y="-15" width="1701" height="1038" maximized="true" key="dock-window-1/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1607509422349" />
+    <state x="623" y="227" key="search.everywhere.popup" timestamp="1608988152024">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608988152024" />
     <state x="790" y="315" key="svn.repositoryBrowser" timestamp="1605960214965">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
