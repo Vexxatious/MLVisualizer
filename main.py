@@ -303,9 +303,10 @@ if __name__ == "__main__":
             gui.setupUi(Dialog)
             Dialog.show()
             app.exec_()
-        elif current_algorithm == "Neural Network" and model_loaded:
-            algorithm = NN(current_dataset,parameters,model=model_path)
-    algorithm = Algorithms[current_algorithm](current_dataset,parameters)
+    if current_algorithm == "Neural Network" and model_loaded:
+        algorithm = NN(current_dataset, parameters, model=model_path)
+    else:
+        algorithm = Algorithms[current_algorithm](current_dataset,parameters)
     if current_algorithm == "Neural Network":
         nn.start()
 

@@ -23,20 +23,21 @@ def init_screen():
 
     font = pygame.font.SysFont('arial', 32)
 class NN:
-    def __init__(self, dataset, parameters,model = None):
+    def __init__(self, dataset, parameters, model = ""):
         global nn
         nn = self
+        print(model)
         init_screen()
         self.user_image = None
         self.prediction = -1
         self.training = True
         self.mnist = tf.keras.datasets.mnist
-        self.parameters = parameters
-        self.parameters[0].append(10)
         (self.x_train, self.y_train), (self.x_test, self.y_test) = self.mnist.load_data()
         self.x_train = tf.keras.utils.normalize(self.x_train, axis=1)
         self.x_test = tf.keras.utils.normalize(self.x_test, axis=1)
-        if not model:
+        if model == "":
+            self.parameters = parameters
+            self.parameters[0].append(10)
             self.model = tf.keras.models.Sequential()
             self.model.add(tf.keras.layers.Flatten())
             for i in range(len(self.parameters[0])):
@@ -47,17 +48,17 @@ class NN:
         else:
             self.model = tf.keras.models.load_model(model)
             self.training = False
+            with open("Saved Model/layers.txt" , "r") as f:
+                self.parameters = [[int(i) for i in f.read().split(',')[:-1]]]
     def draw(self, epoch):
         screen.fill((0, 0, 0))
-
-
         for i in range(len(self.parameters[0])):
             r = height / (4 * min(self.parameters[0][i], 10))
             x = width / len(self.parameters[0])
             for j in range(min(self.parameters[0][i], 10)):
                 pygame.draw.circle(screen, (255, 255, 255), (x + i * x - 2 * r, r + j * r * 4), r)
-                if i <= 1:
-                    for w in range(min(10, len(np.asarray(self.model.layers[i + 1].weights[0][j])))):
+                if i < len(self.parameters[0]) - 1:
+                    for w in range(min(10, len(np.asarray(self.model.layers[2 + i].weights[0][j])))):
                         pygame.draw.line(screen,
                                          (255, 0, 0) if np.sign(self.model.layers[i + 1].weights[0][j][w]) == -1 else (
                                          0, 0, 255), (x + i * x - 2 * r, r + j * r * 4),
@@ -111,6 +112,9 @@ def start():
                 if 20 < mouse[0] < 220 and 150 < mouse[1] < 220:
                     nn.model.save("Saved Model")
                     ctypes.windll.user32.MessageBoxW(0, "Model saved successfully!", "Model Saved", 0)
+                    with open("Saved Model/layers.txt", "w") as f:
+                        for s in nn.parameters[0]:
+                            f.write(str(s)+",")
                 elif 20 < mouse[0] < 270 and 250 < mouse[1] < 320:
                     root = tk.Tk()
                     root.withdraw()
@@ -119,7 +123,6 @@ def start():
                     img = np.array([img])
                     img = img / 255.0
                     nn.prediction = np.argmax(nn.model.predict(img))
-                    print(nn.prediction)
                     nn.user_image = pygame.image.load(file)
                     nn.user_image = pygame.transform.scale(nn.user_image, (100, 100))
 
