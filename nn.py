@@ -29,6 +29,7 @@ class NN:
         print(model)
         init_screen()
         self.user_image = None
+        self.acc = 0
         self.prediction = -1
         self.training = True
         self.mnist = tf.keras.datasets.mnist
@@ -48,6 +49,7 @@ class NN:
         else:
             self.model = tf.keras.models.load_model(model)
             self.training = False
+            _, self.acc = self.model.evaluate(self.x_test, self.y_test)
             with open("Saved Model/layers.txt" , "r") as f:
                 self.parameters = [[int(i) for i in f.read().split(',')[:-1]]]
     def draw(self, epoch):
@@ -84,7 +86,9 @@ class NN:
             screen.blit(training_text, (0, 0))
         else:
             training_text = font.render("Training completed !", False, (255, 0, 0))
+            accuracy_text = font.render(f"Accuracy = %{self.acc*100: .2f}",False,(25,255,255))
             screen.blit(training_text, (0, 0))
+            screen.blit(accuracy_text, (0,400))
             pygame.draw.rect(screen, (255, 255, 0), pygame.Rect(20, 150, 200, 70))
             save_model_text = font.render("Save model", False, (200, 200, 200))
             screen.blit(save_model_text, (30, 160))
@@ -98,6 +102,7 @@ class NN:
         for i in range(self.parameters[2]):
             self.model.fit(self.x_train, self.y_train, epochs=1)
             self.draw(i)
+        _, self.acc = self.model.evaluate(self.x_test,self.y_test)
         self.training = False
 
 

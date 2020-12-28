@@ -2,6 +2,7 @@ from KNN import KNN
 from nn import NN
 import nn
 from LinearRegression import LinearRegression
+from evo import EVO
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 import ctypes
@@ -9,18 +10,68 @@ import tkinter as tk
 from tkinter import filedialog
 import random
 
-Algorithms = {"K Nearest Neighbor": KNN,"Linear Regression": LinearRegression,"Neural Network": NN}
+Algorithms = {"K Nearest Neighbor": KNN,"Linear Regression": LinearRegression,"Neural Network": NN,"Genetic Algorithms": EVO}
 Datasets = {"K Nearest Neighbor": [{'r': [[1,3],[2,1],[1,4],[2,2]], 'g':[[6,5],[6,7],[8,6],[7,7]]},
                                    {'r': [[4,4],[3,4],[4,5],[3,5],[3.5,6],[3.5,4]], 'g':[[2,5],[2,4],[3.5,2],[4,2],[5,4],[5,5],[4,7],[3,3],[2.5,3],[2.5,6],[3,7],[4.5,3],[2.5,4],[5.6,6]]},
                                    {'r': [[1,3],[2,1],[1,4],[2,2]], 'g':[[6,2],[6,3],[8,1],[7,3]], 'b':[[4,7],[6,8],[3,6],[7,8]]}],
             "Linear Regression": [[[1,2],[2,3],[4,5],[6,7],[8,9]]],
-            "Neural Network": ["mnist"]}
+            "Neural Network": ["mnist"],
+            "Genetic Algorithms": ["Flappy Bird"]}
 
 current_algorithm = ""
 current_dataset = []
 parameters = []
 model_loaded = False
 model_path = ""
+
+class EVOGUI(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(319, 158)
+        self.gridLayoutWidget = QtWidgets.QWidget(Dialog)
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(-1, -1, 321, 161))
+        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.label = QtWidgets.QLabel(self.gridLayoutWidget)
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.generationSize = QtWidgets.QSpinBox(self.gridLayoutWidget)
+        self.generationSize.setMaximum(1000)
+        self.generationSize.setProperty("value", 100)
+        self.generationSize.setObjectName("generationSize")
+        self.gridLayout.addWidget(self.generationSize, 0, 1, 1, 1)
+        self.mutationRate = QtWidgets.QDoubleSpinBox(self.gridLayoutWidget)
+        self.mutationRate.setSingleStep(1.0)
+        self.mutationRate.setProperty("value", 0.1)
+        self.mutationRate.setObjectName("mutationRate")
+        self.gridLayout.addWidget(self.mutationRate, 1, 1, 1, 1)
+        self.runButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.runButton.setObjectName("runButton")
+        self.gridLayout.addWidget(self.runButton, 2, 1, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.gridLayoutWidget)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.runButton.clicked.connect(self.checkRunButton)
+
+    def checkRunButton(self):
+        if self.generationSize.value() <= 1:
+            ctypes.windll.user32.MessageBoxW(0, "Choose a larger generation size", "Warning", 0)
+            return
+        parameters.append(self.generationSize.value())
+        parameters.append(self.mutationRate.value())
+        Dialog.accept()
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label.setText(_translate("Dialog", "Generation Size"))
+        self.runButton.setText(_translate("Dialog", "Run"))
+        self.label_2.setText(_translate("Dialog", "Mutation Rate"))
 
 class NNGUI(object):
     def setupUi(self, Dialog):
@@ -159,7 +210,7 @@ class Ui_Dialog(object):
         self.gridLayout.addLayout(self.horizontalLayout, 1, 2, 1, 1)
         self.AlgorithmCombo = QtWidgets.QComboBox(self.gridLayoutWidget)
         self.AlgorithmCombo.setObjectName("AlgorithmCombo")
-        self.AlgorithmCombo.addItems(["Linear Regression","K Nearest Neighbor","Neural Network"])
+        self.AlgorithmCombo.addItems(["Linear Regression","K Nearest Neighbor","Neural Network","Genetic Algorithms"])
         self.gridLayout.addWidget(self.AlgorithmCombo, 0, 2, 1, 1)
         self.label_5 = QtWidgets.QLabel(self.gridLayoutWidget)
         self.label_5.setObjectName("label_5")
@@ -174,7 +225,7 @@ class Ui_Dialog(object):
         self.horizontalLayout_2.addWidget(self.DatasetCombo)
         self.newModel.setEnabled(False)
         self.LoadModel.setEnabled(False)
-        self.DatasetCombo.addItems(["Test"])
+        self.DatasetCombo.addItems(["Example Dataset"])
         self.LoadDataset = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.LoadDataset.setObjectName("LoadDataset")
         self.horizontalLayout_2.addWidget(self.LoadDataset)
@@ -228,13 +279,19 @@ class Ui_Dialog(object):
             self.newModel.setEnabled(False)
             self.LoadModel.setEnabled(False)
             self.ContinueButton.setEnabled(True)
-            self.DatasetCombo.addItems(["Test"])
+            self.DatasetCombo.addItems(["Example Dataset"])
         elif self.AlgorithmCombo.currentText() == "Neural Network":
             self.newModel.setEnabled(True)
             self.LoadModel.setEnabled(True)
             self.ContinueButton.setEnabled(False)
             self.LoadDataset.setEnabled(False)
             self.DatasetCombo.addItems(["Handwritten digits"])
+        elif self.AlgorithmCombo.currentText() == "Genetic Algorithms":
+            self.newModel.setEnabled(False)
+            self.LoadModel.setEnabled(False)
+            self.ContinueButton.setEnabled(True)
+            self.LoadDataset.setEnabled(False)
+            self.DatasetCombo.addItems(["Flappy Bird"])
 
 
     def checkContinueButton(self):
@@ -297,9 +354,15 @@ if __name__ == "__main__":
             gui.setupUi(Dialog)
             Dialog.show()
             app.exec_()
-        if current_algorithm == "Neural Network" and not model_loaded:
+        elif current_algorithm == "Neural Network" and not model_loaded:
             Dialog = QtWidgets.QDialog()
             gui = NNGUI()
+            gui.setupUi(Dialog)
+            Dialog.show()
+            app.exec_()
+        elif current_algorithm == "Genetic Algorithms":
+            Dialog = QtWidgets.QDialog()
+            gui = EVOGUI()
             gui.setupUi(Dialog)
             Dialog.show()
             app.exec_()
