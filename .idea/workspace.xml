@@ -22,10 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="Finished Genetic Algorithms">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="fixed bugs">
       <change beforePath="$PROJECT_DIR$/flappy_bird.py" beforeDir="false" afterPath="$PROJECT_DIR$/flappy_bird.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609162326194</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed bugs">
+      <created>1609678746743</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1609678746743</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,7 +244,8 @@
     <MESSAGE value="Almost Finished Neural Networks" />
     <MESSAGE value="Finished Neural Networks" />
     <MESSAGE value="Finished Genetic Algorithms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Genetic Algorithms" />
+    <MESSAGE value="fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="383" key="#Scopes" timestamp="1608987545645">
@@ -294,10 +300,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608988141953" />
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1609162332791">
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1609678750408">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1609162332791" />
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1609678750408" />
+    <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609678737899">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1609678737899" />
     <state x="-1697" y="-15" width="1701" height="1038" maximized="true" key="dock-window-1" timestamp="1607509422350">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
