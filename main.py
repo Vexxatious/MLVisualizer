@@ -28,6 +28,7 @@ class EVOGUI(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(319, 158)
+        Dialog.setWindowTitle("Genetic Algorithms")
         self.gridLayoutWidget = QtWidgets.QWidget(Dialog)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(-1, -1, 321, 161))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
@@ -68,7 +69,6 @@ class EVOGUI(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "Generation Size"))
         self.runButton.setText(_translate("Dialog", "Run"))
         self.label_2.setText(_translate("Dialog", "Mutation Rate"))
@@ -78,6 +78,7 @@ class NNGUI(object):
         Dialog.setFixedSize(397,297)
         Dialog.setObjectName("Dialog")
         Dialog.resize(397, 297)
+        Dialog.setWindowTitle("Neural Networks")
         self.gridLayoutWidget = QtWidgets.QWidget(Dialog)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(-1, -1, 401, 301))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
@@ -116,7 +117,6 @@ class NNGUI(object):
         self.pushButton.clicked.connect(self.runButtonCheck)
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.activation_combo.setItemText(0, _translate("Dialog", "relu"))
         self.activation_combo.setItemText(1, _translate("Dialog", "sigmoid"))
         self.activation_combo.setItemText(2, _translate("Dialog", "tanh"))
@@ -143,6 +143,7 @@ class KNNGUI(object):
         Dialog.setFixedSize(280,113)
         Dialog.setObjectName("Dialog")
         Dialog.resize(280, 113)
+        Dialog.setWindowTitle("K Nearest Neighbor")
         self.horizontalLayoutWidget = QtWidgets.QWidget(Dialog)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 281, 61))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
@@ -181,7 +182,6 @@ class KNNGUI(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "Choose K"))
         self.RunButton.setText(_translate("Dialog", "Run"))
 
@@ -190,6 +190,7 @@ class Ui_Dialog(object):
         Dialog.setFixedSize(621,378)
         Dialog.setObjectName("Dialog")
         Dialog.resize(621, 378)
+        Dialog.setWindowTitle("ML Visualizer")
         self.gridLayoutWidget = QtWidgets.QWidget(Dialog)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(-1, -1, 621, 381))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
@@ -244,7 +245,6 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_2.setText(_translate("Dialog", "Choose Model"))
         self.newModel.setText(_translate("Dialog", "New"))
         self.LoadModel.setText(_translate("Dialog", "Load"))

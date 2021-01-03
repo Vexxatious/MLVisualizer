@@ -118,7 +118,7 @@ class Bird:
 def getData(bird):
     data = np.zeros(3)
     data[0] = bird.y - pipeSpawner.pipes[0].gapLocation
-    data[1] = pipeSpawner.pipes[0].gapLocation + pipeSpawner.pipes[0].gapSize - bird.y
+    data[1] = pipeSpawner.pipes[0].gapLocation + pipeSpawner.pipes[0].gapSize - bird.y - 32w
     data[2] = bird.y
     return data
 

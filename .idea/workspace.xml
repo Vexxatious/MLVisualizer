@@ -22,26 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="Finished Neural Networks">
-      <change afterPath="$PROJECT_DIR$/Example Handwritten Digit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/background-day.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bird0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bird1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bird2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/pipe-reverse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/pipe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evoui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flappy_bird.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nn_layer.py" afterDir="false" />
+    <list default="true" id="7d2a2d05-899a-42a9-b12d-dc003a07bbed" name="Default Changelist" comment="Finished Genetic Algorithms">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved Model/layers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Saved Model/layers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved Model/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/Saved Model/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved Model/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/Saved Model/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved Model/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/Saved Model/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flappy_bird.py" beforeDir="false" afterPath="$PROJECT_DIR$/flappy_bird.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/nn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608992894900</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finished Genetic Algorithms">
+      <created>1609162326194</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609162326194</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -247,7 +238,8 @@
     <MESSAGE value="Finished Linear Regression" />
     <MESSAGE value="Almost Finished Neural Networks" />
     <MESSAGE value="Finished Neural Networks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Neural Networks" />
+    <MESSAGE value="Finished Genetic Algorithms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Genetic Algorithms" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="383" key="#Scopes" timestamp="1608987545645">
@@ -266,22 +258,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="784" y="444" key="Github.CreateGistDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1605960537529" />
-    <state width="949" height="154" key="GridCell.Tab.0.bottom" timestamp="1608992865832">
+    <state width="949" height="154" key="GridCell.Tab.0.bottom" timestamp="1609162345037">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="154" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608992865832" />
-    <state width="949" height="154" key="GridCell.Tab.0.center" timestamp="1608992865832">
+    <state width="949" height="154" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1609162345037" />
+    <state width="949" height="154" key="GridCell.Tab.0.center" timestamp="1609162345037">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="154" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608992865832" />
-    <state width="949" height="154" key="GridCell.Tab.0.left" timestamp="1608992865831">
+    <state width="949" height="154" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1609162345037" />
+    <state width="949" height="154" key="GridCell.Tab.0.left" timestamp="1609162345037">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="154" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608992865831" />
-    <state width="949" height="154" key="GridCell.Tab.0.right" timestamp="1608992865832">
+    <state width="949" height="154" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1609162345037" />
+    <state width="949" height="154" key="GridCell.Tab.0.right" timestamp="1609162345037">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="949" height="154" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608992865832" />
+    <state width="949" height="154" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1609162345037" />
     <state width="1899" height="215" key="GridCell.Tab.1.bottom" timestamp="1608986105114">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -302,10 +294,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608988141953" />
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1608992905032">
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1609162332791">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608992905032" />
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1609162332791" />
     <state x="-1697" y="-15" width="1701" height="1038" maximized="true" key="dock-window-1" timestamp="1607509422350">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
